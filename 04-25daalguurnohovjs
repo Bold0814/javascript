@@ -1,0 +1,30 @@
+let a = 1, b = 2, c = 3, d = 4, e = 5, avarage;
+
+avarage = (a + b + c + d + e) / 5
+
+console.log(avarage)
+
+let jil = 4;
+
+let sar = 2;
+
+let hariu;
+
+hariu = jil * 12 + sar;
+
+console.log(hariu)
+
+let tsag = 100,
+
+honog,
+
+utsag;
+
+honog = tsag / 24;
+
+honog = Math.floor(honog);
+
+utsag = tsag % 24;
+
+console.log(honog, "honog", utsag, "tsag")
+
