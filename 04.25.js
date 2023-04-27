@@ -44,7 +44,23 @@
 
 // let  a = x > 0;
 
-// console.log(a)
+// console.log(a
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+)
 
 // let x = prompt("x iin utga oruul");
 
