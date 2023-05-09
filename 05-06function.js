@@ -49,3 +49,33 @@
 // }
 
 // print_random()
+
+let array = [2, 6, 7, 9, -3];
+
+// function tegsh_elements(array) {
+    
+//     for (let index = 0; index < array.length; index++) {
+//         if(array[index] % 2 === 0) {
+//             console.log(array[index]);
+//         }
+        
+        
+//     }
+// }
+
+// tegsh_elements(array);
+
+
+let sum = 0;
+
+function sondgoi_elements(array) {
+    
+    for (let index = 0; index < array.length; index++) {
+        if (array[index] % 2 !== 0) {
+            sum = sum + array[index];
+        }
+    }
+    console.log(sum);
+}
+
+sondgoi_elements(array);

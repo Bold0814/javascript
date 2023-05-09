@@ -67,7 +67,7 @@
 // }
                                            
 // let x = prompt("Сараа оруул")
-let x = 5;
+let x = 12;
 x = x * 1
 
 switch (x) {
