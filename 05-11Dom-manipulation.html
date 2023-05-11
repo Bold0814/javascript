@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="h1"></h1>
+    <button id="btn">Орчуулга</button>
+</body>
+
+<script>
+    let $h1 = document.getElementById('h1');
+
+    let $btn = document.getElementById('btn')
+
+    
+    
+    function orchulga() {
+
+    let u = prompt('');
+
+    $h1.innerText = u;
+
+    if($h1.innerText == 'Hello') {
+        $h1.style.fontSize = '100px';
+        $h1.style.color = 'blue'
+        $h1.innerText = 'Сайн уу'
+
+    } else {
+        $h1.style.fontSize = '70px';
+        $h1.style.color = 'pink'
+        $h1.style.textShadow = ' 0 0 15px grey, 0 0 30px green'
+        $h1.innerText = 'Орчуулагдахгүй';
+    }
+}
+
+    $btn.addEventListener('click', orchulga)
+
+
+
+
+</script>
+</html>
