@@ -15,11 +15,14 @@
     }
 
     body{
-        display: flex;
-        justify-content: center;
+        /* display: flex; */
+        /* justify-content: center; */
+        position: relative;
+        top: 40px;
         align-items: center;
         min-height: 100vh;
         background: #1e2759;
+        
     }
 
     ul{
@@ -74,17 +77,51 @@
         background: #5da6ff;
         box-shadow: 0 0 15px #5da6ff, 0 0 30px #5da6ff, 0 0 45px #5da6ff, 0 0 60px #5da6ff;
     }
+
+    #spa1 {
+        width: 50px;
+        height: 20px;
+        /* background:black; */
+        display: flex;
+        position: absolute;
+        top: 10px;
+        right: 80px;
+    }
+
+    #spa1 span {
+        color: white;
+        font-size: 30px;
+               
+    }
     
 </style>
 <body>
+    
+    
     <ul>
         <li><a href="#"><ion-icon name="home-outline"></ion-icon></a></li>
         <li><a href="#"><ion-icon name="person-outline"></ion-icon></a></li>
         <li><a href="#"><ion-icon name="add-circle-outline"></ion-icon></a></li>
         <li><a href="#"><ion-icon name="settings-outline"></ion-icon></a></li>
-        <li><a href="#"><ion-icon name="chatbubble-outline"></ion-icon></a></li>
+        <li id="msgr"><a href="#"><ion-icon name="chatbubble-outline"></ion-icon></a></li>
         <div id="marker"></div>
     </ul>
+
+    <div id="chat">
+
+        <div id="chat1">
+            <div id="spa1">
+                <span>.</span>
+                <span>.</span>
+                <span>.</span>
+                    
+
+            </div>
+            <span id="spa"></span>
+        </div>
+    </div>
+
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
@@ -108,5 +145,6 @@
 
         // }
     </script>
+    <script src="./icon.js"></script>
 </body>
 </html>
