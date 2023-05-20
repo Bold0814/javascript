@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body{
+        width: 100%;
+        height: 100vh;
+        background: hsl(255,30%,20%);
+    }
+    h1{
+        font-size: 40px;
+        text-transform: uppercase;
+        padding: 40px 200px;
+        color: white;
+        opacity: 0.5;
+    }
+    .container{
+        width: 1000px;
+        /* height: 100%; */
+        display: flex;
+        justify-content: space-around;
+    }
+    .goods{
+        width: 400px;
+        text-align: center;
+    }
+    h2{
+        color: wheat;
+        opacity: .5;
+    }
+    form{
+        padding: 20px 40px;
+        /* position: absolute; */
+        color: wheat;
+        text-transform: uppercase;
+    }
+    #week{
+        height: 40px;
+        width: 200px;
+        outline: none;
+        color: rgb(143, 23, 23);
+        background-color: none;
+        border-radius: 10px;
+    }
+    #time{
+        width: 200px;
+        height: 60px;
+        background: none;
+        position: absolute;
+        left: 800px;
+        font-size: 45px;
+        text-align: center;
+        font-weight: bold;
+        color: white;
+    }
+        
+</style>
+<body>
+    <div id="time"></div>
+    <form action="/action_page.php">
+        <label for="week">Өдрөө сонгоно уу</label>
+        <input type="week" id="week" name="week">
+    </form>
+    <h1>Борлуулалтын дэвтэр</h1>
+    <div class="container">
+        <button class="btn">+</button>
+        <div class="goods"><h2>Барааны нэр</h2></div>
+        <div><h2>Тоо</h2></div>
+        <div><h2>Нэгж үнэ</h2></div>
+        <div><h2>Нийт үнэ</h2></div>
+    </div>
+</body>
+<script>
+    let $goods = document.querySelector('.goods');
+    let $btn = document.querySelector(".btn");
+    let list = [];
+    
+
+//     function draw(params) {
+// //   $cont.innerHTML = "";
+        
+
+//   for (let i = 0; i < list.length; i++) {
+//     // console.log(typeof $input.value);
+//     let x;
+//      x = document.createElement("li");
+//     x.innerText = list[i];
+//     $cont.append(x);
+//   }
+// }
+// draw();
+function save(params) {
+    prompt('Барааны нэр оруул');
+
+    let x = prompt(prompt.value);
+
+    
+
+  if (prompt.value == x) {
+    
+
+    let $p = document.createElement("p");
+    $p.innerText = prompt.value;
+    $goods.append($p);
+    list.push(x);
+  } else {
+    x = '';
+    alert('Барааны нэр оруул')
+    // let x;
+    // x = $input.value;
+    // console.log(x, "x value");
+    // list.push(x);
+    // draw();
+
+    // $input.value = "";
+  }
+}
+
+$btn.addEventListener("click", save);
+
+</script>
+<script>
+    setInterval(()=>{
+        const time = document.querySelector('#time');
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        time.textContent = hours + ":" + minutes + ":" + seconds;
+    });
+        
+    
+</script>
+</html>
