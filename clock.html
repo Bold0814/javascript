@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+  
+    #time{
+        width: 200px;
+        height: 60px;
+        background: none;
+        position: absolute;
+        left: 80px;
+        top: 50px;
+        font-size: 45px;
+        text-align: center;
+        font-weight: bold;
+        color: rgb(255, 0, 0);
+    }
+        
+</style>
+<body>
+    <div id="time"></div>
+    
+    <button class="btn">Цаг эхлүүлэх</button>
+    <button class="btn1">Цаг алга болгох</button>
+    
+</body>
+
+</script>
+<script>
+    let $btn = document.querySelector(".btn");
+    let $btn1 = document.querySelector(".btn1")
+    const tim = document.querySelector('#time');
+    
+    function time(params) {
+        tim.style.display = 'block';
+    
+        setTimeout(() => {
+           
+    setInterval(()=>{
+        let date = new Date();
+        let hours = date.getHours();
+        let minutes = date.getMinutes();
+        let seconds = date.getSeconds();
+        hours = 7;
+        
+        
+        if (minutes < 10) {
+            minutes = `0${minutes}`;
+            
+        } else {
+            minutes = `${minutes}`;
+        }
+
+        if (seconds < 10) {
+            seconds = `0${seconds}`;
+            
+        } else {
+            seconds = `${seconds}`;
+        }
+
+        
+        if (hours < 10) {
+            hours = `0${hours}`;
+            
+        } else {
+            hours = `${hours}`;
+        }
+        
+
+        
+
+
+        if (hours > 12) {
+            hours = hours % 12;
+            hours = `0${hours}`;
+
+            tim.innerHTML = hours + ":" + minutes + ":" + seconds +   'PM';
+        } else {
+            tim.innerHTML = hours + ":" + minutes + ":" + seconds +   'AM';
+
+        }
+
+       
+
+        console.log('interval');
+    });
+},);
+
+console.log('start');
+
+};
+
+function timee(params) {
+    tim.style.display = 'none';
+    console.log('stop');
+}
+        console.log($btn1);
+$btn.addEventListener('click', time)
+$btn1.addEventListener('click', timee)
+
+    
+</script>
+</html>
