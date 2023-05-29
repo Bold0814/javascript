@@ -1,4 +1,5 @@
-let choice = ['rock', 'scissor', 'paper'];
+let choice = ['&#9994', '&#9996;&#127995;', '&#9995;&#127997;'];
+// let choice = ['rock', 'scissor', 'paper'];
 
 const $myPoint = document.querySelector('.myPoint');
 const $urDun = document.querySelector('.urDun');
@@ -14,8 +15,21 @@ const $choice2 = document.querySelector('.choice2');
 
 let myChoice;
 let robotChoice;
-let myPoint = 0;
-let robotPoint = 0;
+let myPoint;
+let robotPoint;
+
+
+function start() {
+    myPoint = 0;
+    robotPoint = 0;
+    $myPoint.innerHTML = myPoint;
+    $robotPoint.innerHTML = robotPoint;
+    setTimeout(() => {
+        $urDun.innerHTML = ''
+    }, 1000);
+}
+
+start();
 
 function robot() {
 let r = Math.floor(Math.random() * 3);
@@ -27,8 +41,8 @@ function rock() {
     $urDun.innerHTML = '';
     myChoice = choice[0];
     console.log(myChoice);
-    urDun();
     robot();
+    urDun();
     $choice1.innerHTML = myChoice;
     $choice2.innerHTML = robotChoice;
 }
@@ -37,8 +51,8 @@ function paper() {
     $urDun.innerHTML = '';
     myChoice = choice[2];
     console.log(myChoice);
-    urDun();
     robot();
+    urDun();
     $choice1.innerHTML = myChoice;
     $choice2.innerHTML = robotChoice;
 }
@@ -47,8 +61,8 @@ function scissor() {
     $urDun.innerHTML = '';
     myChoice = choice[1];
     console.log(myChoice);
-    urDun();
     robot();
+    urDun();
     $choice1.innerHTML = myChoice;
     $choice2.innerHTML = robotChoice;
 }
@@ -58,52 +72,58 @@ $paper.addEventListener('click', paper);
 $scissor.addEventListener('click', scissor);
 
 function urDun() {
-    if(myChoice == 'rock' && robotChoice == 'scissor') {
+    if(myChoice == '&#9994' && robotChoice == '&#9996;&#127995;') {
         console.log("WIN");
         setTimeout(() => {
             $urDun.innerHTML = 'WIN';
-        }, 2000);
+        }, 1000);
         myPoint++;
-    } else if (myChoice == 'rock' && robotChoice == 'paper') {
+    } else if (myChoice == '&#9994' && robotChoice == '&#9995;&#127997;') {
         console.log('LOSE');
         setTimeout(() => {
             $urDun.innerHTML = 'LOSE';
-        }, 2000);
+        }, 1000);
         robotPoint++;
-    }  else if(myChoice == 'paper' && robotChoice == 'rock') {
+    }  else if(myChoice == '&#9995;&#127997;' && robotChoice == '&#9994') {
         console.log('WIN');
         setTimeout(() => {
             $urDun.innerHTML = 'WIN';
-        }, 2000);
+        }, 1000);
         myPoint++;
-    } else if(myChoice == 'paper' && robotChoice == 'scissor') {
+    } else if(myChoice == '&#9995;&#127997;' && robotChoice == '&#9996;&#127995;') {
         console.log('LOSE');
         setTimeout(() => {
             $urDun.innerHTML = 'LOSE';
-        }, 2000);
+        }, 1000);
         robotPoint++;
-    }  else if(myChoice == 'scissor' && robotChoice == 'paper') {
+    }  else if(myChoice == '&#9996;&#127995;' && robotChoice == '&#9995;&#127997;') {
         console.log('WIN');
         setTimeout(() => {
             $urDun.innerHTML = 'WIN';
-        }, 2000);
+        }, 1000);
         myPoint++;
-    } else if(myChoice == 'scissor' && robotChoice == 'rock') {
+    } else if(myChoice == '&#9996;&#127995;' && robotChoice == '&#9994') {
         console.log('LOSE');
         setTimeout(() => {
             $urDun.innerHTML = 'LOSE';
-        }, 2000);
+        }, 1000);
         robotPoint++;
     } else {
         console.log('DRAW');
         setTimeout(() => {
             $urDun.innerHTML = 'DRAW';
-        }, 2000);
+        }, 1000);
     }
     console.log(myPoint);
     console.log(robotPoint);
 
     $myPoint.innerHTML = myPoint;
     $robotPoint.innerHTML = robotPoint;
+    
+    if(myPoint >= 10 || robotPoint >= 10) {
+        alert('Togsov');
+        start();
+    }
 }
+
 
